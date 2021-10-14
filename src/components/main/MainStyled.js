@@ -21,7 +21,7 @@ export const Row2 = styled(Row)`
 `
 
 export const Row3 = styled(Row)`
-    min-height: 400px;
+    min-height: 30rem;
     display: flex;
     justify-content: space-around;
     align-items: space-around;

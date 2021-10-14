@@ -16,20 +16,22 @@ export const MainCard = () => {
   const name = TakeData(loading ? '' : data.name)
   const temperature = Math.floor(TakeData(loading ? '' : data.main.temp) - 273.15)
   const feels_like = Math.floor(TakeData(loading ? '' : data.main.feels_like) - 273.15)
-  const weatherImg = TakeData(loading ? '' : data.weather[0].icon)
+  const weatherImg = TakeData(loading ? '50d' : data.weather[0].icon)
   const description = TakeData(loading ? '' : data.weather[0].main)
 
-  const Save = () => {
-    dispatch(increment())
-    const storage = {
-      name: name,
-      temperature: temperature,
-      feels_like: feels_like,
-      weatherImg: weatherImg,
-      description: description
-    }
+  const storage = {
+    name: name,
+    temperature: temperature,
+    feels_like: feels_like,
+    weatherImg: weatherImg,
+    description: description
+  }
 
+  const Save = () => {
+
+    dispatch(increment())
     localStorage.setItem(name, JSON.stringify(storage))
+
   }
 
   return (

@@ -11,10 +11,13 @@ export const refreshLoadingSlice = createSlice({
     setFalse: (state) => {
       state.value = false
     },
+    setTrue: (state) => {
+      state.value = true
+    },
   },
 })
 
-export const { setFalse } = refreshLoadingSlice.actions
+export const { setFalse, setTrue } = refreshLoadingSlice.actions
 
 export const selectRefreshLoading = (state) => state.refreshLoading.value
 

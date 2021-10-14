@@ -4,7 +4,7 @@ import { setData } from "../../store/features/resDataSlice"
 import { useEffect } from "react"
 import { setFalse } from "../../store/features/loadingSlice"
 import { refreshInput } from "../../store/features/inputSlice"
-
+import { GetHoursTemp } from './getHoursTemp'
 
 export const GetWeather = () => {
 
@@ -18,7 +18,8 @@ export const GetWeather = () => {
             store.dispatch(setData(res.data))
             store.dispatch(setFalse())
             store.dispatch(refreshInput())
-            console.log(res.data)
+            GetHoursTemp()
+            console.log('GetWeather Res:', res.data)
         })
         .catch(err => console.log(err))
 

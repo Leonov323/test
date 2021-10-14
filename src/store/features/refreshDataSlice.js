@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   value: {},
-};
+}
 
 export const refreshDataSlice = createSlice({
   name: 'refreshData',

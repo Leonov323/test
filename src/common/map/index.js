@@ -1,9 +1,8 @@
 import { Cards } from '../../components/main/cards'
 
 
-
 export const CardList = () => {
-
+    
     const keys = Object.keys(localStorage)
 
     const Data = () => {
