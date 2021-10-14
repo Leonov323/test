@@ -23,16 +23,18 @@ export const Cards = (props) => {
     window.scrollTo(0, 0)
   }
 
+  const button = document.querySelector('button')
   const [spinner, setSpinner] = useState(false)
   const Handle = () => {
     setSpinner(true)
+    button?.setAttribute('button', 'disabled')
     GetRefresh(name)
     setTimeout(() => {
       GetRefresh(name)
-    }, 200)
+    }, 400)
     setTimeout(() => {
       setSpinner(false)
-    }, 400)
+    }, 600)
   }
 
   return (
