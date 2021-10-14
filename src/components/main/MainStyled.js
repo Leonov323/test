@@ -22,6 +22,9 @@ export const Row2 = styled(Row)`
 
 export const Row3 = styled(Row)`
     min-height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: space-around;
 `
 
 export const Col1 = styled(Col)`
@@ -36,8 +39,3 @@ export const Col2 = styled(Col)`
     align-items: center;
 `
 
-export const Col3 = styled(Col)`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-`

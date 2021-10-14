@@ -1,10 +1,17 @@
 import React from 'react'
 import { WrapperStyled, Row1, Row2, Row3, Col1, Col2 } from './MainStyled'
 import { SearchForm } from './searchForm'
-import { Cards } from './cards'
 import { CardInfo } from './CardInfo'
+import { CardList } from '../../common/map'
+import { useSelector } from 'react-redux'
+import { selectCount } from '../../store/features/counterSlice'
 
 export const Main = () => {
+
+    const count = useSelector(selectCount)
+
+    React.useEffect(() => { CardList() }, [count])
+
     return (
         <WrapperStyled>
             <Row1>
@@ -18,7 +25,7 @@ export const Main = () => {
                 </Col2>
             </Row2>
             <Row3>
-                <Cards />
+                <CardList />
             </Row3>
         </WrapperStyled>
     )

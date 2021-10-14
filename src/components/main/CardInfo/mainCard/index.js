@@ -1,41 +1,36 @@
 import React from 'react'
 import { Card, ListGroup, Image } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { selectResData } from '../../../../store/features/resDataSlice'
 import { CardStyled, ButtonStyled } from './MainCardStyled'
+import { TakeData } from '../takeData'
+import { selectLoading } from '../../../../store/features/loadingSlice'
+import { increment } from '../../../../store/features/counterSlice'
 
 export const MainCard = () => {
 
+  const loading = useSelector(selectLoading)
   const data = useSelector(selectResData)
-  const value = Object.values(data)
+  const dispatch = useDispatch()
 
-  const Temperature = () => {
-    if (value.length > 1) {
-      const tempInf = data.main.temp
-      const celsius = Math.floor(tempInf - 273.15)
-      return celsius
-    } else { return null }
+  const name = TakeData(loading ? '' : data.name)
+  const temperature = Math.floor(TakeData(loading ? '' : data.main.temp) - 273.15)
+  const feels_like = Math.floor(TakeData(loading ? '' : data.main.feels_like) - 273.15)
+  const weatherImg = TakeData(loading ? '' : data.weather[0].icon)
+  const description = TakeData(loading ? '' : data.weather[0].main)
+
+  const Save = () => {
+    dispatch(increment())
+    const storage = {
+      name: name,
+      temperature: temperature,
+      feels_like: feels_like,
+      weatherImg: weatherImg,
+      description: description
+    }
+
+    localStorage.setItem(name, JSON.stringify(storage))
   }
-
-  const Name = () => {
-    if (value.length > 1) {
-      const name = data.name
-      return name
-    } else { return null }
-  }
-
-  const WeatherImg = () => {
-    if (value.length > 1) {
-      const weatherIcon = data.weather[0].icon
-      return weatherIcon
-    } else { return '50d' }
-  }
-
-  const weatherImg = WeatherImg()
-
-  const name = Name()
-
-  const temperature = Temperature()
 
   return (
     <CardStyled>
@@ -45,21 +40,24 @@ export const MainCard = () => {
         <Card.Title>{name}</Card.Title>
 
         <ListGroup variant="flush">
-
           <ListGroup.Item>
-
+            <p>{description}</p>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <Image
               src={`http://openweathermap.org/img/wn/${weatherImg}@2x.png`} alt='weather'
               width='50px'
               height='50px'
             />
-            {temperature} °C
-
+            <span>{temperature} °C </span>
           </ListGroup.Item>
-          
+          <ListGroup.Item>
+            <p> Feels like {feels_like} °C</p>
+          </ListGroup.Item>
+
           <ListGroup.Item>
 
-            <ButtonStyled variant='dark'>Save</ButtonStyled>
+            <ButtonStyled variant='dark' onClick={Save}>Save</ButtonStyled>
 
           </ListGroup.Item>
 
