@@ -16,8 +16,7 @@ export const CardList = () => {
   }
 
   const list = Data()
-
-  function storageAvailable (type) {
+  const storageAvailable = (type) => {
     let storage
     try {
       storage = window[type]
@@ -27,40 +26,40 @@ export const CardList = () => {
       return true
     } catch (e) {
       return e instanceof DOMException && (
-      // everything except Firefox
+        // everything except Firefox
         e.code === 22 ||
-                // Firefox
-                e.code === 1014 ||
-                // test name field too, because code might not be present
-                // everything except Firefox
-                e.name === 'QuotaExceededError' ||
-                // Firefox
-                e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-                // acknowledge QuotaExceededError only if there's something already stored
-                (storage && storage.length !== 0)
+        // Firefox
+        e.code === 1014 ||
+        // test name field too, because code might not be present
+        // everything except Firefox
+        e.name === 'QuotaExceededError' ||
+        // Firefox
+        e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+        // acknowledge QuotaExceededError only if there's something already stored
+        (storage && storage.length !== 0)
     }
   }
 
   const Render = () => {
     if (storageAvailable('localStorage')) {
       return <>
-                {list.map(({
-                  name,
-                  temperature,
-                  feels_like,
-                  weatherImg,
-                  description
-                }, index) => {
-                  return <Cards
-                        name={name}
-                        temperature={temperature}
-                        feels_like={feels_like}
-                        weatherImg={weatherImg}
-                        description={description}
-                        delete={name}
-                        key={index} />
-                })}
-            </>
+        {list.map(({
+          name,
+          temperature,
+          feels_like,
+          weatherImg,
+          description
+        }, index) => {
+          return <Cards
+            name={name}
+            temperature={temperature}
+            feels_like={feels_like}
+            weatherImg={weatherImg}
+            description={description}
+            delete={name}
+            key={index} />
+        })}
+      </>
     } else {
       return <p className="text-center mt-5">No saved cards</p>
     }
