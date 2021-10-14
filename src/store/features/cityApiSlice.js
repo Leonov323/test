@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: 'Rome',
-};
+  value: 'Rome'
+}
 
 export const cityApiSlice = createSlice({
   name: 'cityApi',
@@ -10,8 +10,8 @@ export const cityApiSlice = createSlice({
   reducers: {
     setCity: (state, { payload }) => {
       state.value = payload
-    },
-  },
+    }
+  }
 })
 
 export const { setCity } = cityApiSlice.actions

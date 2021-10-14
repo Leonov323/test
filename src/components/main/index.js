@@ -7,12 +7,11 @@ import { useSelector } from 'react-redux'
 import { selectCount } from '../../store/features/counterSlice'
 
 export const Main = () => {
+  const count = useSelector(selectCount)
 
-    const count = useSelector(selectCount)
+  React.useEffect(() => { CardList() }, [count])
 
-    React.useEffect(() => { CardList() }, [count])
-
-    return (
+  return (
         <WrapperStyled>
             <Row1>
                 <Col1>
@@ -28,5 +27,5 @@ export const Main = () => {
                 <CardList />
             </Row3>
         </WrapperStyled>
-    )
+  )
 }

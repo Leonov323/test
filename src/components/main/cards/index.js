@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Card, ListGroup, Image } from 'react-bootstrap'
 import { CardStyled, ButtonStyled, SpinnerStyled } from './MainCardStyled'
 import { useDispatch } from 'react-redux'
-import { selectCount } from '../../../store/features/counterSlice'
-import { increment } from '../../../store/features/counterSlice'
+import { selectCount, increment } from '../../../store/features/counterSlice'
 import { GetRefresh } from '../../../common/services/getRefresh'
 import { setCity } from '../../../store/features/cityApiSlice'
 import { GetWeather } from '../../../common/services/getWeather'
@@ -29,13 +29,11 @@ export const Cards = (props) => {
     GetRefresh(name)
     setTimeout(() => {
       GetRefresh(name)
-    }, 200);
+    }, 200)
     setTimeout(() => {
       setSpinner(false)
-    }, 400);
+    }, 400)
   }
-
-
 
   return (
     <CardStyled value={spinner} >
@@ -50,7 +48,7 @@ export const Cards = (props) => {
           </ListGroup.Item>
           <ListGroup.Item>
             <Image
-              src={`http://openweathermap.org/img/wn/${props.weatherImg}@2x.png`} alt='weather'
+              src={`https://openweathermap.org/img/wn/${props.weatherImg}@2x.png`} alt='weather'
               width='50px'
               height='50px'
             />
@@ -73,4 +71,13 @@ export const Cards = (props) => {
       <ButtonStyled variant='danger' onClick={Delete}>Delete</ButtonStyled>
     </CardStyled>
   )
+}
+
+Cards.propTypes = {
+  name: PropTypes.string,
+  delete: PropTypes.string,
+  description: PropTypes.string,
+  temperature: PropTypes.number,
+  feels_like: PropTypes.number,
+  weatherImg: PropTypes.string
 }

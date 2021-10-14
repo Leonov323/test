@@ -2,8 +2,8 @@ import React from 'react'
 import { Form, FloatingLabel, Button } from 'react-bootstrap'
 import { GetWeather, GetWeatherEffect } from '../../../common/services/getWeather'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectInput } from '../../../store/features/inputSlice'
-import { setInput } from "../../../store/features/inputSlice"
+import { selectInput, setInput } from '../../../store/features/inputSlice'
+
 import { setCity } from '../../../store/features/cityApiSlice'
 
 export const SearchForm = () => {

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react'
 import { Card, ListGroup, Image } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,7 +9,6 @@ import { selectLoading } from '../../../../store/features/loadingSlice'
 import { increment } from '../../../../store/features/counterSlice'
 
 export const MainCard = () => {
-
   const loading = useSelector(selectLoading)
   const data = useSelector(selectResData)
   const dispatch = useDispatch()
@@ -28,10 +28,8 @@ export const MainCard = () => {
   }
 
   const Save = () => {
-
     dispatch(increment())
     localStorage.setItem(name, JSON.stringify(storage))
-
   }
 
   return (
@@ -47,7 +45,7 @@ export const MainCard = () => {
           </ListGroup.Item>
           <ListGroup.Item>
             <Image
-              src={`http://openweathermap.org/img/wn/${weatherImg}@2x.png`} alt='weather'
+              src={`https://openweathermap.org/img/wn/${weatherImg}@2x.png`} alt='weather'
               width='50px'
               height='50px'
             />

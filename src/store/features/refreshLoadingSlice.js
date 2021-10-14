@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: true,
-};
+  value: true
+}
 
 export const refreshLoadingSlice = createSlice({
   name: 'refreshLoading',
@@ -13,8 +13,8 @@ export const refreshLoadingSlice = createSlice({
     },
     setTrue: (state) => {
       state.value = true
-    },
-  },
+    }
+  }
 })
 
 export const { setFalse, setTrue } = refreshLoadingSlice.actions

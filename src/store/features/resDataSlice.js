@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: {} ,
-};
+  value: {}
+}
 
 export const resDataSlice = createSlice({
   name: 'resData',
@@ -10,8 +10,8 @@ export const resDataSlice = createSlice({
   reducers: {
     setData: (state, { payload }) => {
       state.value = payload
-    },
-  },
+    }
+  }
 })
 
 export const { setData } = resDataSlice.actions

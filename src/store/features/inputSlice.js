@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: '',
-};
+  value: ''
+}
 
 export const inputSlice = createSlice({
   name: 'input',
@@ -13,8 +13,8 @@ export const inputSlice = createSlice({
     },
     refreshInput: (state) => {
       state.value = ''
-    },
-  },
+    }
+  }
 })
 
 export const { setInput, refreshInput } = inputSlice.actions

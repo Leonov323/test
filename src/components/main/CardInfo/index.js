@@ -7,7 +7,6 @@ import { selectLoading } from '../../../store/features/loadingSlice'
 import { TakeData } from './takeData'
 
 export const CardInfo = () => {
-
   const loading = useSelector(selectLoading)
   const data = useSelector(selectResData)
 

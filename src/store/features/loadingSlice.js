@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: true,
-};
+  value: true
+}
 
 export const loadingSlice = createSlice({
   name: 'loading',
@@ -10,8 +10,8 @@ export const loadingSlice = createSlice({
   reducers: {
     setFalse: (state) => {
       state.value = false
-    },
-  },
+    }
+  }
 })
 
 export const { setFalse } = loadingSlice.actions

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: {},
+  value: {}
 }
 
 export const refreshDataSlice = createSlice({
@@ -10,8 +10,8 @@ export const refreshDataSlice = createSlice({
   reducers: {
     setRefreshData: (state, { payload }) => {
       state.value = payload
-    },
-  },
+    }
+  }
 })
 
 export const { setRefreshData } = refreshDataSlice.actions

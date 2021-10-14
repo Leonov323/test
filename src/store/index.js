@@ -4,7 +4,7 @@ import cityApiReducer from './features/cityApiSlice'
 import resDataReducer from './features/resDataSlice'
 import loadingReducer from './features/loadingSlice'
 import inputReducer from './features/inputSlice'
-import refreshDataReducer  from './features/refreshDataSlice'
+import refreshDataReducer from './features/refreshDataSlice'
 import refreshLoadingReducer from './features/refreshLoadingSlice'
 
 export const store = configureStore({
@@ -16,6 +16,6 @@ export const store = configureStore({
     input: inputReducer,
     refreshData: refreshDataReducer,
     refreshLoading: refreshLoadingReducer
-    
-  },
-});
+
+  }
+})

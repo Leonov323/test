@@ -4,7 +4,6 @@ import { GlobalStyles } from './Global'
 import { Main } from './components/main'
 
 const App = () => {
-
   return (
     <>
       <GlobalStyles />

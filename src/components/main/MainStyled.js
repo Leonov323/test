@@ -38,4 +38,3 @@ export const Col2 = styled(Col)`
     justify-content: center;
     align-items: center;
 `
-

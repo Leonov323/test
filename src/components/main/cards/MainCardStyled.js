@@ -1,8 +1,6 @@
 import { Card, Button, Spinner } from 'react-bootstrap'
 import styled from 'styled-components'
 
-
-
 export const CardStyled = styled(Card)`
     width: 18rem;
     height: 22rem;
@@ -10,7 +8,7 @@ export const CardStyled = styled(Card)`
     
     .list-group {
         height: 11rem;
-        display: ${({ value }) => value ? "none" : "block"}
+        display: ${({ value }) => value ? 'none' : 'block'}
     }
     .hide {
         
@@ -30,5 +28,5 @@ export const SpinnerStyled = styled(Spinner)`
     position: relative;
     top: 25%;
     margin: 0 auto;
-    display: ${({ value }) => value ? "flex" : "none"};
+    display: ${({ value }) => value ? 'flex' : 'none'};
 `
