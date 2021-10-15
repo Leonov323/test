@@ -34,11 +34,8 @@ export const MainCard = () => {
 
   return (
     <CardStyled>
-
       <Card.Body>
-
         <Card.Title>{name}</Card.Title>
-
         <ListGroup variant="flush">
           <ListGroup.Item>
             <p>{description}</p>
@@ -54,17 +51,11 @@ export const MainCard = () => {
           <ListGroup.Item>
             <p> Feels like {feels_like} °C</p>
           </ListGroup.Item>
-
           <ListGroup.Item>
-
             <ButtonStyled variant='dark' onClick={Save}>Save</ButtonStyled>
-
           </ListGroup.Item>
-
         </ListGroup>
-
       </Card.Body>
-
     </CardStyled>
   )
 }
