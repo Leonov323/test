@@ -16,14 +16,17 @@ export const ButtonStyled = styled(Button)`
 
 const animation = keyframes`
     0% { opacity: 0; }
-    100% { opacity: 1; }
+    10% { opacity: 1; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 `
 
 export const SavedAlertStyled = styled(Alert)`
-    animation: ${animation} 1s linear;
+    animation: ${animation} 3s ease-out;
     text-align: center;
     position: absolute;
     transition: all 1s linear;
     right: 0;
+    opacity: 0;
     display: ${props => props.animate ? 'block' : 'none'};
 `
