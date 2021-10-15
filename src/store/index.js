@@ -6,6 +6,7 @@ import loadingReducer from './features/loadingSlice'
 import inputReducer from './features/inputSlice'
 import refreshDataReducer from './features/refreshDataSlice'
 import refreshLoadingReducer from './features/refreshLoadingSlice'
+import savedReducer from './features/savedSlice'
 
 export const store = configureStore({
   reducer: {
@@ -15,7 +16,8 @@ export const store = configureStore({
     loading: loadingReducer,
     input: inputReducer,
     refreshData: refreshDataReducer,
-    refreshLoading: refreshLoadingReducer
+    refreshLoading: refreshLoadingReducer,
+    saved: savedReducer
 
   }
 })

@@ -45,14 +45,14 @@ export const CardList = () => {
         {list.map(({
           name,
           temperature,
-          feels_like,
+          feelsLike,
           weatherImg,
           description
         }, index) => {
           return <Cards
             name={name}
             temperature={temperature}
-            feels_like={feels_like}
+            feelsLike={feelsLike}
             weatherImg={weatherImg}
             description={description}
             delete={name}

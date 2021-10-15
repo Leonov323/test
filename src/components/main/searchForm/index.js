@@ -3,7 +3,6 @@ import { Form, FloatingLabel, Button } from 'react-bootstrap'
 import { GetWeather, GetWeatherEffect } from '../../../common/services/getWeather'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectInput, setInput } from '../../../store/features/inputSlice'
-
 import { setCity } from '../../../store/features/cityApiSlice'
 
 export const SearchForm = () => {
