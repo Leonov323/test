@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import React from 'react'
 import { Card, ListGroup, Image } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'

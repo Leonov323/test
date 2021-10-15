@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { Cards } from '../../components/main/cards'
 import React from 'react'
 

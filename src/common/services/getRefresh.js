@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import axios from 'axios'
 import { store } from '../../store'
 import { increment } from '../../store/features/counterSlice'
