@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react'
 import { Card, ListGroup, Image } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -16,14 +17,14 @@ export const MainCard = () => {
 
   const name = TakeData(loading ? '' : data.name)
   const temperature = Math.floor(TakeData(loading ? '' : data.main.temp) - 273.15)
-  const feelsLike = Math.floor(TakeData(loading ? '' : data.main.feelsLike) - 273.15)
+  const feels_like = Math.floor(TakeData(loading ? '' : data.main.feels_like) - 273.15)
   const weatherImg = TakeData(loading ? '50d' : data.weather[0].icon)
   const description = TakeData(loading ? '' : data.weather[0].main)
 
   const storage = {
     name: name,
     temperature: temperature,
-    feelsLike: feelsLike,
+    feels_like: feels_like,
     weatherImg: weatherImg,
     description: description
   }
@@ -51,7 +52,7 @@ export const MainCard = () => {
             <span>{temperature} °C </span>
           </ListGroup.Item>
           <ListGroup.Item>
-            <p> Feels like {feelsLike} °C</p>
+            <p> Feels like {feels_like} °C</p>
           </ListGroup.Item>
           <ListGroup.Item>
             <ButtonStyled variant='dark' onClick={Save}>Save</ButtonStyled>

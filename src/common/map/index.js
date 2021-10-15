@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Cards } from '../../components/main/cards'
 import React from 'react'
 
@@ -45,14 +46,14 @@ export const CardList = () => {
         {list.map(({
           name,
           temperature,
-          feelsLike,
+          feels_like,
           weatherImg,
           description
         }, index) => {
           return <Cards
             name={name}
             temperature={temperature}
-            feelsLike={feelsLike}
+            feels_like={feels_like}
             weatherImg={weatherImg}
             description={description}
             delete={name}
