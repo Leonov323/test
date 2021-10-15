@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import { Card, ListGroup, Image } from 'react-bootstrap'
 import { CardStyled, ButtonStyled, SpinnerStyled } from './MainCardStyled'
 import { useDispatch } from 'react-redux'
-import { selectCount, increment } from '../../../store/features/counterSlice'
+import { increment } from '../../../store/features/counterSlice'
 import { GetRefresh } from '../../../common/services/getRefresh'
 import { setCity } from '../../../store/features/cityApiSlice'
 import { GetWeather } from '../../../common/services/getWeather'
 
 export const Cards = (props) => {
   const name = props.name
-  const dispatch = useDispatch(selectCount)
+  const dispatch = useDispatch()
 
   const Delete = () => {
     localStorage.removeItem(props.delete)
@@ -23,11 +23,9 @@ export const Cards = (props) => {
     window.scrollTo(0, 0)
   }
 
-  const button = document.querySelector('button')
   const [spinner, setSpinner] = useState(false)
   const Handle = () => {
     setSpinner(true)
-    button?.setAttribute('button', 'disabled')
     GetRefresh(name)
     setTimeout(() => {
       GetRefresh(name)
