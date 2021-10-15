@@ -12,6 +12,8 @@ export const store = configureStore({
   reducer: {
     counter: counterReducer,
     cityApi: cityApiReducer,
+    setErrorTrue: cityApiReducer,
+    setErrorFalse: cityApiReducer,
     resData: resDataReducer,
     loading: loadingReducer,
     input: inputReducer,

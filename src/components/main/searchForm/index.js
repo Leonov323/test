@@ -3,11 +3,13 @@ import { Form, FloatingLabel, Button } from 'react-bootstrap'
 import { GetWeather, GetWeatherEffect } from '../../../common/services/getWeather'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectInput, setInput } from '../../../store/features/inputSlice'
-import { setCity } from '../../../store/features/cityApiSlice'
+import { selectError, setCity } from '../../../store/features/cityApiSlice'
+import { ErrorStyled } from './SearchFormStyled'
 
 export const SearchForm = () => {
   const dispatch = useDispatch()
   const input = useSelector(selectInput)
+  const error = useSelector(selectError)
   if (input !== '') {
     dispatch(setCity(input))
   }
@@ -15,6 +17,7 @@ export const SearchForm = () => {
 
   return (
     <>
+      <ErrorStyled value={error}>City not found</ErrorStyled>
       <FloatingLabel label="Enter city name">
         <Form.Control
           type="text"

@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { setFalse } from '../../store/features/loadingSlice'
 import { refreshInput } from '../../store/features/inputSlice'
 import { setSavedFalse } from '../../store/features/savedSlice'
+import { setErrorFalse, setErrorTrue } from '../../store/features/cityApiSlice'
 // import { GetHoursTemp } from './getHoursTemp'
 
 export const GetWeather = () => {
@@ -18,10 +19,14 @@ export const GetWeather = () => {
       store.dispatch(setFalse())
       store.dispatch(refreshInput())
       store.dispatch(setSavedFalse())
+      store.dispatch(setErrorFalse())
       // GetHoursTemp()
       console.log('GetWeather Res:', res.data)
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      store.dispatch(setErrorTrue())
+      console.log(err)
+    })
 }
 
 export const GetWeatherEffect = () => {
