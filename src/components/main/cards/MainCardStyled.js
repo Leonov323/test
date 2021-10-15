@@ -5,13 +5,9 @@ export const CardStyled = styled(Card)`
     width: 18rem;
     height: 22rem;
     margin: 20px auto;
-    
     .list-group {
         height: 11rem;
         display: ${({ value }) => value ? 'none' : 'block'}
-    }
-    .hide {
-        
     }
     .card-body {
         cursor: pointer;

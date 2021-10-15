@@ -32,9 +32,3 @@ export const Col1 = styled(Col)`
     justify-content: center;
     align-items: center;
 `
-
-export const Col2 = styled(Col)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
