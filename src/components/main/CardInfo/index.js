@@ -15,7 +15,7 @@ export const CardInfo = () => {
   const max = Math.floor(TakeData(loading ? '' : data.main.temp_max) - 273.15)
   const min = Math.floor(TakeData(loading ? '' : data.main.temp_min) - 273.15)
 
-  const date = new Date('2015-02-24T21:23').toLocaleDateString()
+  const date = new Date().toLocaleDateString()
   const time = new Date().toLocaleTimeString()
 
   return (

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Container, Row, Col } from 'react-bootstrap'
 
-export const WrapperStyled = styled(Container)`
+export const MainStyled = styled(Container)`
     width: 100%;
     min-height: calc(100vh - 50px);
     .row {

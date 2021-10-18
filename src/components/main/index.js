@@ -1,5 +1,5 @@
 import React from 'react'
-import { WrapperStyled, Row1, Row2, Row3, Col1 } from './MainStyled'
+import { MainStyled, Row1, Row2, Row3, Col1 } from './MainStyled'
 import { SearchForm } from './searchForm'
 import { CardInfo } from './CardInfo'
 import { CardList } from '../../common/map'
@@ -12,7 +12,7 @@ export const Main = () => {
   React.useEffect(() => { CardList() }, [count])
 
   return (
-        <WrapperStyled>
+        <MainStyled>
             <Row1>
                 <Col1>
                     <SearchForm />
@@ -26,6 +26,6 @@ export const Main = () => {
             <Row3>
                 <CardList />
             </Row3>
-        </WrapperStyled>
+        </MainStyled>
   )
 }
